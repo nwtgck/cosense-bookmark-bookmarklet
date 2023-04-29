@@ -194,7 +194,7 @@
   const body  = `\
 ${tagsStr}
 
-[** [${document.title.replace(/[`]/g, '')} ${location.href}]]
+[** [${cleanSiteTitle} ${location.href}]]
 `;
   const url = `${scrapboxUrl}/${encodeURIComponent(title)}?body=${encodeURIComponent(body)}`;
   window.open(url);

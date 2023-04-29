@@ -1,6 +1,6 @@
 (() => {
   // Change it!
-  const scrapboxUrl = "https://scrapbox.io/nwtgck";
+  const scrapboxUrl = "https://scrapbox.io/nwtgck-bookmark";
 
   // (from: http://www.chasen.org/~taku/software/TinySegmenter/)
 
@@ -183,7 +183,9 @@
 
   // Clean title for Scrapbox title
   const cleanSiteTitle = document.title.replace(/[\[\]`]/g, '');
-  const title = `B: ${cleanSiteTitle}`;
+  const cleanSiteTitleForScrapbox = cleanSiteTitle
+    .replace(/^.*?さんはTwitterを使っています:?\s*/, "Twitter");
+  const title = `B: ${cleanSiteTitleForScrapbox}`;
   const segmenter = new TinySegmenter();
   const segs = segmenter.segment(document.title);
   const nouns = segs.filter(s => ["A", "H", "K"].includes(segmenter.ctype_(s)));

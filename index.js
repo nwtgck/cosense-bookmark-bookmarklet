@@ -184,7 +184,7 @@
   // Clean title for Scrapbox title
   const cleanSiteTitle = document.title.replace(/[\[\]`]/g, '');
   const cleanSiteTitleForScrapbox = cleanSiteTitle
-    .replace(/^.*?さんはTwitterを使っています:?\s*/, "Twitter");
+    .replace(/^Xユーザーの.+?さん:?\s*/, "X（旧Twitter）");
   const title = `B: ${cleanSiteTitleForScrapbox}`;
   const segmenter = new TinySegmenter();
   const segs = segmenter.segment(document.title);
